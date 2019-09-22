@@ -1,0 +1,112 @@
+body{
+    margin:0px;
+    font-family:"微軟正黑體","新細明體";
+}
+.header{
+    font-size: 40px;color:white;
+    font-weight:bold;
+    text-align: center;
+    background-color: #223344;
+    padding:30px 0px;
+}
+/*CSS Media Query*/
+@media(max-width:500px){
+    /*螢幕尺寸小於500px的時候，額外套用這個區塊的設定*/
+    .header{
+        font-size: 30px;    
+    }
+}
+.nav{
+    font-size: 24px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+/*階層式選擇器*/
+.nav>.item{
+    font-weight:bold;
+    padding:20px;
+    cursor:pointer;
+}
+@media(max-width:500px){
+    /*螢幕尺寸小於500px的時候，額外套用這個區塊的設定*/
+    .nav{
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    /*
+    .nav{    
+        font-size: 12px;    
+    }
+    .nav>.item{
+        padding: 15px 10px;
+    }*/
+}
+/*虛擬選擇器，和其他選擇器搭配*/
+.nav>.item:hover{
+    background-color: #dddddd
+}
+.visual{
+    height:400px;;line-height: 400px;
+    background-image: url(seashore.jpg);
+    background-position: center 60%;
+    background-size:cover;
+
+    font-size: 50px;
+    text-align: center;
+    color: #aabbcc;
+    text-shadow: 7px 3px 4px black;
+}
+/* CSS 排版工具:flexbox*/
+.content{
+    display: flex;/*區塊並排*/
+    justify-content: center;/*左右對齊*/
+    align-items: center;/*垂直對齊*/
+    
+    padding: 40px 0px;
+}
+.content>.left{
+    width: 500px;    
+    text-align: center;
+}
+.content>.right{
+    width: 400px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 100px
+}
+/* .left中的細節*/
+.content>.left>.head{
+    width: 400px;height:500px;
+    border-radius: 50%;
+}
+/*.right中的細節*/
+.content>.right>.title{
+    font-weight: bold;
+}
+@media(max-width:500px){
+    /*螢幕尺寸小於500px的時候，額外套用這個區塊的設定*/
+    .content{
+        flex-wrap: wrap;/*讓flexbox中的區塊可以往下掉*/
+    }
+    .content>.left{
+        width: 95%
+    }
+    .content>.right{
+        width: 95%
+    }
+    .content>.left>.head{
+        width: 80%;height: auto;
+    }
+}
+
+
+/*footer*/
+.footer{
+    background-color: #223344;
+    color: white;font-size: 24px;
+    text-align: center;
+    padding: 40px 0px;
+
+}
+
